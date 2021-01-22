@@ -48,6 +48,36 @@ function budgetCalculator(watch, phone, laptop) {
 }
 
 
+function hotelCost(day) {
+    var cost;
+    if (day >= 0 && day <= 10) {
+        cost = day * 100;
+        return cost;
+    }
+
+    else if (day >= 11 && day <= 20) {
+        var firstPart = 10 * 100;
+        var remaining = day - 10;
+        var secondPart = remaining * 80;
+        cost = firstPart + secondPart;
+        return cost;
+    }
+    else if (day > 20) {
+        var firstPart = 10 * 100;
+        var secondPart = 10 * 80;
+        var remaining = day - 20;
+        var thirdPart = remaining * 50;
+        cost = firstPart + secondPart + thirdPart;
+        return cost;
+    }
+    else if (day < 0) {
+        cost = "Day can't be negative."
+        return cost;
+    }
+}
+
+
+
 /*var friend = megaFriend(["a","klmnopy","abdcdcd", "ab", "abd",  ]);
 console.log(friend);
 
@@ -56,5 +86,7 @@ console.log(budget);
 
 var meter = kilometerToMeter(-50);
 console.log(meter);
-*/
 
+var result = hotelCost(-5494);
+console.log(result);
+*/
